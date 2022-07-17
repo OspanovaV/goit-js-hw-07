@@ -53,7 +53,7 @@ function onGalleryContainerClick(evt) {
     }
     const urlEl = evt.target.dataset.source; //получение url большого изображения
     
-//используем библиотеку basicLightbox
+//используем библиотеку basicLightbox для открытия модалки
 const instance = basicLightbox.create(`<img src="${urlEl}">`);
 instance.show(() => window.addEventListener('keydown', onEscKeyPress));
  
@@ -61,7 +61,7 @@ instance.show(() => window.addEventListener('keydown', onEscKeyPress));
 function onEscKeyPress(event) {
   const ESC_KEY_CODE = 'Escape'; 
   if (event.code === ESC_KEY_CODE) { //если значение клавиши= ESC
-//    onCloseModal();//закрыть модалку
+//закрыть модалку при помощи метода библиотеки
   instance.close(() => window.removeEventListener('keydown', onEscKeyPress));
        return;
   }
