@@ -29,8 +29,12 @@ function createGalleryCardsMarkup(galleryItems) {//функция принима
     }).join('');
 }
 
-// //инициализация библиотеки
-const gallery = new SimpleLightbox('.gallery__item');
-gallery.open();
+// //инициализация библиотеки, а также добавим опции: 
+new SimpleLightbox('.gallery__item', {
+  captionsData: 'alt', //отображение подписей к изображениям из атрибута alt
+  captionPosition: 'bottom', //подпись будет снизу
+  captionDelay: 250 //появляется через 250 миллисекунд после открытия
+});
+
 console.log(galleryItems);
 
